@@ -1,13 +1,13 @@
-﻿create database QUANLYBENHNHAN
+create database QUANLYBENHNHAN
 
 create table BenhNhan(
    MaBN varchar(10) constraint PK_BN primary key, 
    Họ nvarchar(50),
    Tên nvarchar(50),
+   giớitính nvarchar(10),
    Ngaysinh DATE,
    Địachỉ nvarchar(100),
    Sdt varchar(50),
-   giớitính nvarchar(10),
    Bảohiểmytế nvarchar(50) 
 )
 go
@@ -57,10 +57,6 @@ create table BệnhNhân_DịchVụ(
 	MaDV varchar(10) not null constraint FK_DV foreign key references [dbo].[DịchVụ](MaDV),
 	NgàySửDụng date
 );
-
-drop table [dbo].[BệnhNhân_DịchVụ]
---create table ĐơnThuốc_Thuốc(
---);
 
 create table Thuốc(
 MaT varchar(10) constraint PK_T primary key,
@@ -154,4 +150,27 @@ MaHS varchar(10) constraint FK_HS1 foreign key references [dbo].[HồSơBệnhÁ
 KhámBệnh nvarchar(10),
 Điềutrị nvarchar(10)
 );
+
+GO
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS001',N'Lê Xuân',N'An',N'0987654321',N'Hà Nội')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS002',N'Nguyễn Mai',N'Anh',N'0987654312',N'Hà Nội')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS003',N'Lê Ngọc',N'Ánh',N'0987654231',N'Phú Thọ')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS004',N'Vũ Mạnh',N'Bảo',N'0987654213',N'Hưng Yên')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS005',N'Nguyễn Thị Ngọc',N'Bích',N'0987654123',N'Hà Nội')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS006',N'Nguyễn Hùng',N'Cường',N'0987654132',N'Hà Nội')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS007',N'Vũ Mạnh',N'Cường',N'0987651234',N'Hưng Yên')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS008',N'Trịnh Xuân',N'Dũng',N'0987651243',N'Thanh Hoá')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS009',N'Nguyễn Thái',N'Dương',N'0987651324',N'Thái Nguyên')
+INSERT [dbo].[BácSĩ]([MaBS],[Họ],[Tên],[SDT],[ĐịaChỉ]) VALUES (N'BS010',N'Phùng Văn',N'Dương',N'0987651342',N'Hải Dương')
+GO
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN001',N'Trần Xuân',N'Đạt',N'Nam', CAST(N'1990-02-14T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631085')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN002',N'Trương Quảng',N'Đông',N'Nam', CAST(N'1992-09-02T00:00:00.000' AS DateTime), N'Hà Nội',N'0987612345','222631088')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN003',N'Nguyễn Minh',N'Đức',N'Nam', CAST(N'1990-02-17T00:00:00.000' AS DateTime), N'Thanh Hoá',N'0987651423','222631089')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN004',N'Giang Đức',N'Hải',N'Nam', CAST(N'1990-06-02T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631091')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN005',N'Trần Minh',N'Hiếu',N'Nam', CAST(N'2000-04-21T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631095')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN006',N'Vũ Minh',N'Hiếu',N'Nam', CAST(N'2001-11-04T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631096')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN007',N'Đỗ Duy',N'Huân',N'Nam', CAST(N'1991-01-01T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631098')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN008',N'Bùi Quang',N'Huy',N'Nam', CAST(N'2004-11-27T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631101')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN009',N'Vũ Quang',N'Huy',N'Nam', CAST(N'2003-02-08T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','222631102')
+INSERT [dbo].[BenhNhan]([MaBN],[Họ],[Tên],[giớitính],[Ngaysinh],[Địachỉ],[Sdt],[Bảohiểmytế]) VALUES (N'BN010',N'Lê Đức',N'Khánh',N'Nam', CAST(N'1983-08-23T00:00:00.000' AS DateTime), N'Hà Nội',N'0987651423','22263110')
 
